@@ -11,7 +11,7 @@
 - Multiple independent training seeds and a separate held-out evaluation seed range.
 - Episode-level CSV datasets, optional compressed transition logs, benchmark JSON, Markdown report and SVG learning curve.
 - Paired reward differences with bootstrap confidence intervals.
-- Tests and GitHub Actions CI on Python 3.10–3.13.
+- Tests and GitHub Actions CI on Python 3.10-3.13.
 - Optional Laya integration for high-level advice; Laya is not the RL algorithm.
 - A documented, gated roadmap for a future DotaService adapter.
 
