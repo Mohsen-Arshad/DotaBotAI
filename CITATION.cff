@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+message: "If you use DotaBotAI, cite it as a software artifact."
+title: "DotaBotAI"
+version: 0.2.0
+date-released: 2026-10-09
+type: software
+license: MIT

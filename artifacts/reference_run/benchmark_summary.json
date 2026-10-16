@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "environment_id": "synthetic-lane-v1",
+  "warning": "Results describe only a synthetic lane-control environment, not live Dota 2.",
+  "training": {
+    "episodes_per_seed": 10000,
+    "transition_dataset_recorded": false,
+    "train_seeds": [
+      11,
+      23,
+      37
+    ],
+    "updates_total": 2100000,
+    "model_paths": [
+      "models/qtable_seed_11.json",
+      "models/qtable_seed_23.json",
+      "models/qtable_seed_37.json"
+    ]
+  },
+  "evaluation": {
+    "episodes_per_policy": 100,
+    "eval_seed_start": 100000,
+    "eval_seed_end": 100099,
+    "policies": {
+      "learned": {
+        "n": 300,
+        "mean_reward": 19.641,
+        "std_reward": 2.51439,
+        "ci95_mean_reward": [
+          19.277633,
+          20.022133
+        ],
+        "mean_last_hits": 11.896667,
+        "std_last_hits": 1.131071,
+        "ci95_mean_last_hits": [
+          11.72,
+          12.073333
+        ],
+        "mean_gold": 416.383333,
+        "std_gold": 39.587495,
+        "ci95_mean_gold": [
+          409.966667,
+          422.216667
+        ],
+        "mean_deaths": 0.0,
+        "std_deaths": 0.0,
+        "mean_steps": 70.0,
+        "std_steps": 0.0,
+        "mean_survived": 1.0,
+        "std_survived": 0.0
+      },
+      "random": {
+        "n": 100,
+        "mean_reward": -4.4516,
+        "std_reward": 2.917931,
+        "ci95_mean_reward": [
+          -5.0033,
+          -3.8545
+        ],
+        "mean_last_hits": 4.98,
+        "std_last_hits": 1.667213,
+        "ci95_mean_last_hits": [
+          4.66,
+          5.29
+        ],
+        "mean_gold": 174.3,
+        "std_gold": 58.352464,
+        "ci95_mean_gold": [
+          163.1,
+          185.85
+        ],
+        "mean_deaths": 0.0,
+        "std_deaths": 0.0,
+        "mean_steps": 70.0,
+        "std_steps": 0.0,
+        "mean_survived": 1.0,
+        "std_survived": 0.0
+      },
+      "heuristic": {
+        "n": 100,
+        "mean_reward": 20.0897,
+        "std_reward": 3.061959,
+        "ci95_mean_reward": [
+          19.5207,
+          20.676
+        ],
+        "mean_last_hits": 11.9,
+        "std_last_hits": 1.178983,
+        "ci95_mean_last_hits": [
+          11.66,
+          12.13
+        ],
+        "mean_gold": 416.5,
+        "std_gold": 41.264391,
+        "ci95_mean_gold": [
+          408.45,
+          424.2
+        ],
+        "mean_deaths": 0.0,
+        "std_deaths": 0.0,
+        "mean_steps": 70.0,
+        "std_steps": 0.0,
+        "mean_survived": 1.0,
+        "std_survived": 0.0
+      }
+    },
+    "paired_comparisons": {
+      "learned_vs_random": {
+        "paired_eval_seed_count": 100,
+        "mean_reward_difference": 24.0926,
+        "bootstrap_ci95_reward_difference": [
+          23.412633,
+          24.765667
+        ],
+        "fraction_eval_seeds_with_positive_difference": 1.0
+      },
+      "learned_vs_heuristic": {
+        "paired_eval_seed_count": 100,
+        "mean_reward_difference": -0.4487,
+        "bootstrap_ci95_reward_difference": [
+          -0.8622,
+          -0.042433
+        ],
+        "fraction_eval_seeds_with_positive_difference": 0.34
+      }
+    }
+  },
+  "acceptance_checks": {
+    "learned_beats_random_95pct_paired_bootstrap_ci": true,
+    "learned_beats_heuristic_95pct_paired_bootstrap_ci": false,
+    "rules": "Promotion criterion here is learned-vs-random CI lower bound > 0; the heuristic result is reported, not hidden."
+  },
+  "runtime_seconds": 18.042
+}
